@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            font-family: "Poppins", sans-serif;
+            font-size: 16px; /* Adjust the base font size */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            margin: 0;
+            background: url('https://images.unsplash.com/photo-1502899576159-f224dc2349fa?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+            background-size: cover;
+        }
+        nav {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            margin-left: 1rem;
+        }
+        nav .right {
+            display: flex;
+            align-items: center;
+        }
+        .container2 {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1rem; /* Reduced padding */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem; /* Reduced margin */
+            width: 90%; /* Adjust width to fit smaller screens */
+            max-width: 500px;
+            margin-top: 4rem; /* Add margin to avoid overlap with navbar */
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1rem; /* Reduced padding */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%; /* Adjust width to fit smaller screens */
+            max-width: 500px;
+        }
+        input[type="text"] {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%; /* Full width input */
+            margin-bottom: 1rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .qr-code {
+            margin-top: 1rem;
+        }
+        .qr-code img {
+            width: 150px; /* Smaller QR code */
+            height: 150px;
+        }
+        .error {
+            color: red;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div>
+            <a href="/">QR Code Generator</a>
+        </div>
+        <div class="right">
+            <a href="https://github.com/your-repository" target="_blank">Repository</a>
+            <a href="https://ramonvalentinportfolio.com/">About Me</a>
+        </div>
+    </nav>
+
+    <div class="container2">
+        <h2>Welcome to the QR Code Generator</h2>
+        <br>
+        <h3>Your Go-To Tool for QR Code Generation</h3>
+    </div>
+
+    <div class="container">
+        <h3>Insert a link below to generate a QR Code</h3>
+        <br>
+        <form action="/" method="POST">
+            <input type="text" name="link" placeholder="Enter URL" required />
+            <div>
+                <button type="submit">Generate QR</button>
+                <button type="button" onclick="resetForm()">Reset</button>
+            </div>
+        </form>
+        {% if qr_code %}  <!-- Condicional para mostrar el QR code solo si existe -->
+            <div class="qr-code">
+                <img src="{{ qr_code }}" alt="Generated QR Code" />
+            </div>
+        {% elif error %}  <!-- Condicional para mostrar el mensaje de error -->
+            <div class="error">{{ error }}</div>
+        {% else %}
+            <div class="qr-code"></div>  <!-- Empty div to maintain structure -->
+        {% endif %}
+    </div>
+
+    <script>
+        function resetForm() {
+            document.querySelector('form').reset();
+            const qrCode = document.querySelector('.qr-code');
+            const error = document.querySelector('.error');
+            if (qrCode) qrCode.innerHTML = '';
+            if (error) error.innerHTML = '';
+        }
+    </script>
+</body>
+</html>

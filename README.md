@@ -9,7 +9,6 @@ Welcome to the QR Code Generator project! This application allows users to gener
 - Easy-to-use interface
 - Includes navigation links to "About Me" and the project repository
 
-
 ## Installation
 
 1. **Clone the repository**:
@@ -53,23 +52,3 @@ Welcome to the QR Code Generator project! This application allows users to gener
 
 ## Project Structure
 
-├── main.py
-├── requirements.txt
-├── static
-│ └── styles.css
-├── templates
-│ └── index.html
-└── README.md
-
-
-## Dependencies
-
-- Flask
-- qrcode[pil]
-
-You can install all the dependencies using:
-```bash
-pip install -r requirements.txt
-
-Repository
-Visit  https://github.com/RamonvCS/QRCODE-generator-may.git

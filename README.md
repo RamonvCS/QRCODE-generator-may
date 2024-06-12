@@ -2,6 +2,13 @@
 
 Welcome to the QR Code Generator project! This application allows users to generate QR codes for any URL they provide. The application is built using Flask and provides a simple and intuitive user interface.
 
+## Images
+
+Here are some images of the application:
+
+![Image1](imgs/Image1.png)
+![Image2](imgs/Image2.png)
+
 ## Features
 
 - Generate QR codes from URLs

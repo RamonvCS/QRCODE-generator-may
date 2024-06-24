@@ -1,6 +1,6 @@
 # QR Code Generator
 
-Welcome to the QR Code Generator project! This application allows users to generate QR codes for any URL they provide. The application is built using Flask and provides a simple and intuitive user interface.
+This QR Code Generator application allows users to create QR codes for any URL they provide. Built using Flask, it offers a simple and intuitive user interface designed for both desktop and mobile users.
 
 ## Images
 
@@ -8,6 +8,15 @@ Here are some images of the application:
 
 ![Image1](imgs/Image1.png)
 ![Image2](imgs/Image2.png)
+
+
+## Technologies Used
+
+Flask: A lightweight WSGI web application framework in Python.
+Python: The programming language used to develop the application.
+HTML/CSS: For the frontend design and layout.
+qrcode: A Python library for generating QR codes.
+Jinja2: A templating engine for Python, used by Flask to generate HTML.
 
 ## Features
 

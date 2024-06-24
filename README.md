@@ -12,11 +12,13 @@ Here are some images of the application:
 
 ## Technologies Used
 
-Flask: A lightweight WSGI web application framework in Python.
-Python: The programming language used to develop the application.
-HTML/CSS: For the frontend design and layout.
-qrcode: A Python library for generating QR codes.
-Jinja2: A templating engine for Python, used by Flask to generate HTML.
+- Flask: A lightweight WSGI web application framework in Python.
+- Python: The programming language used to develop the application.
+- HTML/CSS: For the frontend design and layout.
+- qrcode: A Python library for generating QR codes.
+- Jinja2: A templating engine for Python, used by Flask to generate HTML.
+- Bootstrap: For responsive design and styling.
+- JavaScript: For handling interactive elements on the frontend.
 
 ## Features
 
